@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'forum/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/main3.css' %}">
     {% if title %}
         <title>IMVU Community - {{ title }}</title>
     {% else %}
@@ -19,15 +19,14 @@
 <body>
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-                <a class="navbar-brand mr-4" href="/"><img src="{% static 'forum/icon-imvu.svg' %}" width="100" height="100"></a>
-            <div class="container fixed-top">
+                <a class="navbar-brand mr-4" href="{% url 'forum-home'%}"><img src="{% static 'forum/icons8-imvu.svg' %}" width="50px"></a>
+            <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'forum-home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% url 'forum-about' %}">About</a>
+                        <a class="nav-item nav-link" href="{% url 'forum-home'%}" style="position: center;">Welcome to IMVU Community Forum</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
@@ -44,38 +43,18 @@
     </header>
     <main role="main" class="container">
         <div class="row">
-            <div class="col-md-7">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                {% block content %}{% endblock %}
-            </div>
-            <div class="col-md-5">
-                <div class="content-section">
-                  <h3>IMVU Community Forum</h3>
-                  <nav class="navbar navbar-light bg-light">
-                        <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='q'>
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                  </nav>
-                    <p class='text-muted'>Ask questions straight to our extensive and passionate community of users. 
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light"><a href="{% url 'post-create'%}">New Post</a></li>
-                            <li class="list-group-item list-group-item-light">Articles</li>
-                            <li class="list-group-item list-group-item-light">Discussions</li>
-                            <li class="list-group-item list-group-item-light">Guidelines</li>
-                        </ul>
-                    </p>
-                </div>
+            <div class="col-md-10">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
             </div>
         </div>
     </main>
-    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
