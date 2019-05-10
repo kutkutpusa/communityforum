@@ -4,8 +4,9 @@
         <div class="media-body">
             <div class="article-metadata">
                 <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
-                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                <small class="text-muted"> {{ object.date_posted|date:"l - F d, Y @ P" }} </small>
+                Post created by: <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                <small class="text-muted"> {{ object.date_posted|date:"l - F d, Y @ P" }} (UTC) </small>
+                <p class="text-secondary">{{ object.author.profile.bio }}</p>
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <p class="article-content">{{ object.content }}</p>
@@ -15,4 +16,9 @@
             {% endif %}
         </div>
     </article>
+
+    <div id="like-section" style="margin-top: -18px">
+        {% include 'forum/like_section.html' %}
+    </div>
+
 {% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "forum/base1.html" %}
+{% block content %}
+    {% for discussion in discussions %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <img class="rounded-circle article-img" src="{{ discussion.author.profile.image.url }}">
+                    <a class="mr-2" href="{% url 'user-posts' discussion.author.username %}">{{ discussion.author }}</a>
+                    <small class="text-muted"> {{ discussion.date_posted|date:"l - F d, Y @ P" }} Coordinated Universal Time (UTC) </small>
+                    <p class="text-secondary">{{ discussion.author.profile.bio }}</p>
+                </div>
+                <h2><a class="article-title" href="{% url 'post-detail' discussion.id %}">{{ discussion.title }}</a></h2>
+                <p class="article-content">{{ discussion.content|safe|truncatewords:"50"|linebreaks }}</p>
+                <a href="{% url 'post-detail' discussion.id %}">Read more...</a>
+            </div>
+        </article>
+    {% endfor %}
+    {% if discussions.has_previous %}
+        <a class="btn btn_outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn_outline-info mb-4" href="?page={{ discussions.previous_page_number }}">Previous</a>
+    {% endif %}
+        
+    {% for num in discussions.paginator.page_range %}
+        {% if discussions.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > discussions.number|add:'-3' and num < discussions.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if discussions.has_next %}
+        <a class="btn btn_outline-info mb-4" href="?page={{ discussions.next_page_number }}">Next</a>
+        <a class="btn btn_outline-info mb-4" href="?page={{ discussions.paginator.num_pages }}">Last</a>
+    {% endif %}
+
+{% endblock content %}

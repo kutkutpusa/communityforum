@@ -28,6 +28,63 @@ def home(request):
     }
     return render(request, 'forum/home.html', context)
 
+def article(request):
+    a = Post.objects.filter(status=Post.article).order_by('-date_posted')
+    query = request.GET.get('q')
+    if query:
+        a = Post.objects.filter(status=Post.article).order_by('-date_posted')
+    this_page = request.GET.get("page", 1)
+    pages = Paginator(a, 5)
+    try:
+        articles = pages.page(this_page)
+    except PageNotAnInteger:
+        articles = pages.page(1)
+    except EmptyPage:
+        articles = pages.page(pages.num_pages)
+
+    context = {
+        'articles' : articles
+    }
+    return render(request, 'forum/article.html', context)
+
+def guidelines(request):
+    g = Post.objects.filter(status=Post.guidelines).order_by('-date_posted')
+    query = request.GET.get('q')
+    if query:
+        g = Post.objects.filter(status=Post.guidelines).order_by('-date_posted')
+    this_page = request.GET.get("page", 1)
+    pages = Paginator(g, 5)
+    try:
+        guidelines = pages.page(this_page)
+    except PageNotAnInteger:
+        guidelines = pages.page(1)
+    except EmptyPage:
+        guidelines = pages.page(pages.num_pages)
+
+    context = {
+        'guidelines' : guidelines
+    }
+    return render(request, 'forum/guideline.html', context)
+
+def discussions(request):
+    d = Post.objects.filter(status=Post.general).order_by('-date_posted')
+    query = request.GET.get('q')
+    if query:
+        d = Post.objects.filter(status=Post.general).order_by('-date_posted')
+    this_page = request.GET.get("page", 1)
+    pages = Paginator(d, 5)
+    try:
+        discussions = pages.page(this_page)
+    except PageNotAnInteger:
+        discussions = pages.page(1)
+    except EmptyPage:
+        discussions = pages.page(pages.num_pages)
+
+    context = {
+        'discussions' : discussions
+    }
+    return render(request, 'forum/discussion.html', context)
+
 class UserPostListView(ListView):
     model = Post
     template_name = 'forum/user_posts.html'
