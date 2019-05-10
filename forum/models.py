@@ -19,11 +19,8 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-<<<<<<< HEAD
     status = models.IntegerField(choices=STATUS_CHOICES, default=general)
-=======
     like = models.ManyToManyField(User, related_name='likes', blank=True)
->>>>>>> dc6bbab9a515ff76931495c359aff710c061cf33
 
     def __str__(self):
         return self.title
@@ -34,3 +31,14 @@ class Post(models.Model):
     def total_likes(self):
         return self.like.count()
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+
+
+
+    def __str__(self):
+        return self.text

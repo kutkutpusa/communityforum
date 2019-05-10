@@ -1,27 +1,46 @@
 {% extends "forum/base3.html" %}
 {% block content %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
-                Post created by: <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                <small class="text-muted"> {{ object.date_posted|date:"l - F d, Y @ P" }} (UTC) </small>
-                <p class="text-secondary">{{ object.author.profile.bio }}</p>
-            </div>
-            <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.content }}</p>
-
-
-            {% if object.author == user %}
-                <a class="btn btn-secondary btn-sm mt-3 mb-1" href="{% url 'post-update' object.id %}">Update</a>
-                <a class="btn btn-danger btn-sm mt-3 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
-            {% endif %}
-
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+            Post created by: <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author
+            }}</a>
+            <small class="text-muted"> {{ object.date_posted|date:"l - F d, Y @ P" }} (UTC)</small>
+            <p class="text-secondary">{{ object.author.profile.bio }}</p>
         </div>
-    </article>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+        <a href="{% url 'post-detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
 
-    <div id="like-section" style="margin-top: -18px">
-        {% include 'forum/like_section.html' %}
+
+        {% if object.author == user %}
+        <a class="btn btn-secondary btn-sm mt-3 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm mt-3 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+        {% endif %}
+
     </div>
+</article>
 
+<div id="like-section" style="margin-top: -18px">
+    {% include 'forum/like_section.html' %}
+</div>
+
+<hr>
+<div>
+    <form action="{% url 'add_comment_to_post' pk=post.pk %}" method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+</div>
+{% for comment in post.comments.all %}
+<div class="comment">
+    <div class="date">{{ comment.created_date }}</div>
+    <strong>{{ comment.author }}</strong>
+    <p>{{ comment.text|linebreaks }}</p>
+</div>
+{% empty %}
+<p>No comments here yet :(</p>
+{% endfor %}
 {% endblock content %}

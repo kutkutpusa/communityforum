@@ -2,13 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template.loader import render_to_string
+from users.forms import CommentForm
+from django.shortcuts import redirect
 
 
 @login_required
@@ -33,7 +35,7 @@ def home(request):
     }
     return render(request, 'forum/home.html', context)
 
-<<<<<<< HEAD
+
 def article(request):
     a = Post.objects.filter(status=Post.article).order_by('-date_posted')
     query = request.GET.get('q')
@@ -90,8 +92,7 @@ def discussions(request):
         'discussions' : discussions
     }
     return render(request, 'forum/discussion.html', context)
-=======
->>>>>>> dc6bbab9a515ff76931495c359aff710c061cf33
+
 
 class UserPostListView(ListView):
     model = Post
@@ -114,6 +115,7 @@ class PostDetailView(DetailView):
         if post.like.filter(id=self.request.user.id).exists():
             context['is_liked'] = True
         context['total_like'] = post.total_likes()
+        context['form'] = CommentForm()
         print(context)
         return context
 
@@ -154,17 +156,19 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-# def post_detail(request, pk):
-#     post = get_object_or_404(Post, id=pk)
-#     is_liked = False
-#     if post.like.filter(id=request.user.id).exists():
-#         is_liked = True
-#     context = {
-#         'post': post,
-#         'is_liked': is_liked,
-#         'total_like': post.total_like(),
-#     }
-#     return render(request, 'forum/post_detail.html', context)
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        print(request.user)
+        if form.is_valid():
+            text = request.POST.get('text')
+            comment = Comment.objects.create(post=post, author=request.user, text=text)
+            comment.save()
+            return redirect('post-detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'forum/add_comment_to_post.html', {'form': form})
 
 
 def like_post(request):
