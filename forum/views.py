@@ -33,7 +33,6 @@ def home(request):
     }
     return render(request, 'forum/home.html', context)
 
-<<<<<<< HEAD
 def article(request):
     a = Post.objects.filter(status=Post.article).order_by('-date_posted')
     query = request.GET.get('q')
@@ -90,8 +89,6 @@ def discussions(request):
         'discussions' : discussions
     }
     return render(request, 'forum/discussion.html', context)
-=======
->>>>>>> dc6bbab9a515ff76931495c359aff710c061cf33
 
 class UserPostListView(ListView):
     model = Post

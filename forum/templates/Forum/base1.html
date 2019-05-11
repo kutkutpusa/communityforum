@@ -33,7 +33,7 @@
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
                             <a class="nav-item nav-link" href="{% url 'profile'%}">Profile</a>
-                            <a class="nav-item nav-link" href="{% url 'logout'%}">Logout</a>
+                        <a class="nav-item nav-link" href="{% url 'logout'%}">Logout</a>
                         {% else %}
                             <a class="nav-item nav-link" href="{% url 'login'%}">Login</a>
                         {% endif %}
@@ -63,7 +63,7 @@
                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                   </nav>
-                    <p class='text-muted'>Ask questions straight to our extensive and passionate community of users. 
+                    <p class='text-muted'>Hi {{ user.username }}! Ask questions straight to our extensive and passionate community of users. 
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-light"><a href="{% url 'post-create'%}">Ask A Question</a></li>
                             <li class="list-group-item list-group-item-light"><a href="{% url 'forum-discussion'%}">Discussions</a></li>
