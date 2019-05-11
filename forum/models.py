@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib import admin
 from django.urls import reverse
+from django.forms import TextInput, Textarea
+
 
 
 class Post(models.Model):
@@ -31,3 +33,12 @@ class Post(models.Model):
     def total_likes(self):
         return self.like.count()
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    reply = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.reply

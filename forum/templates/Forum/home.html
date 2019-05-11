@@ -11,7 +11,7 @@
                 </div>
                 <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                 <p class="article-content">{{ post.content|safe|truncatewords:"50"|linebreaks }}</p>
-                <a href="{% url 'post-detail' post.id %}">Read more...</a>
+                <a href="{% url 'post-detail' post.id %}">{{ post.comments.count }} Comments</a>
             </div>
         </article>
     {% endfor %}
