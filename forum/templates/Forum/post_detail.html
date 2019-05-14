@@ -38,11 +38,12 @@
         <button type="submit" class="save btn btn-primary">Send</button>
     </form>
 </div>
-{% for comment in post.comments.all %}
+{% for comment in post.comments.all|dictsortreversed:"created_date" %}
 <div class="border-top pt-2 mt-3">
+    <img class="rounded-circle article-img" src="{{ comment.author.profile.image.url }}">
     <strong>{{ comment.author }}</strong>
     <p>{{ comment.reply|linebreaks }}</p>
-    <div class="date">{{ comment.created_date }} UTC</div>
+    <small class="text-muted">{{ comment.created_date }} UTC</small>
 </div>
 {% empty %}
 <p>No comments here yet :(</p>

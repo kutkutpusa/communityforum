@@ -19,7 +19,7 @@
 <body>
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-                <a class="navbar-brand mr-4" href="/"><img src="{% static 'forum/icon-imvu.svg' %}" width="100" height="100"></a>
+                <a class="navbar-brand mr-4" href="{% url 'forum-home' %}"><img src="{% static 'forum/icon-imvu.svg' %}" width="100" height="100"></a>
             <div class="container fixed-top">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,14 +56,14 @@
             </div>
             <div class="col-md-5">
                 <div class="content-section">
-                  <h3>IMVU Community Forum</h3>
+                  <h3><img src="https://webasset-akm.imvu.com/asset/6539c41f67fb0e9b/unicorns_sections/creatorlanding/img/discussions.svg"> Welcome {{ user.username }}!</h3>
                   <nav class="navbar navbar-light bg-light">
                         <form class="form-inline">
                           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='q'>
                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                   </nav>
-                    <p class='text-muted'>Hi {{ user.username }}! Ask questions straight to our extensive and passionate community of users. 
+                    <p class='text-muted'>Ask questions straight to our extensive and passionate community of users. 
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-light"><a href="{% url 'post-create'%}">Ask A Question</a></li>
                             <li class="list-group-item list-group-item-light"><a href="{% url 'forum-discussion'%}">Discussions</a></li>

@@ -30,16 +30,15 @@
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="index.html">IMVU</a></h1>
+					<h1 class="brand"><a href="/">IMVU</a></h1>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
 							<li><a title="team" href="#about">About</a></li>
-							<li><a title="services" href="#services">Services</a></li>
-							<li><a title="works" href="#works">Works</a></li>
-							<li><a title="blog" href="#blog">Blog</a></li>
+							<li><a title="creator" href="#creator">Community</a></li>
 							<li><a title="contact" href="#contact">Contact</a></li>
 							<li><a href="{% url 'login' %}">Login</a></li>
+							<li><a href="{% url 'register' %}">Sign Up</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -50,7 +49,7 @@
 	<div id="header-wrapper" class="header-slider">
 		<header class="clearfix">
 			<div class="logo">
-				<img src="{% static 'img/logo-image.png' %}" alt="" />
+				<img src="{% static 'img/logo-image1.png' %}" alt="" />
 			</div>
 			<div class="container">
 				<div class="row">
@@ -64,12 +63,12 @@
 								</li>
 								<li>
 									<p class="home-slide-content">
-										Eat and drink <strong>design</strong>
+										A New World is a <strong>Click Away</strong>
 									</p>
 								</li>
 								<li>
 									<p class="home-slide-content">
-										We loves <strong>simplicity</strong>
+										Your Style is Your <strong>Statement</strong>
 									</p>
 								</li>
 							</ul>
@@ -105,61 +104,13 @@
 					<div>
 						<h2>We live with <strong>creativity</strong></h2>
 						<p>
-							Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
-							al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.
+							The world’s largest avatar-based social network where shared experiences build deeper friendships, creativity counts, and all relationships matter. 
 						</p>
 					</div>
 				</div>
 				<div class="span6">
 					<div class="aligncenter">
-						<img src="{% static 'img/icons/creativity.png' %}" alt="" />
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span2 offset1 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="{% static 'img/team/img-1.jpg' %}" alt="" />
-						<h3>John Doe</h3>
-						<p>
-							Art director
-						</p>
-					</div>
-				</div>
-				<div class="span2 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="{% static 'img/team/img-2.jpg' %}" alt="" />
-						<h3>Mike Doe</h3>
-						<p>
-							Web developer
-						</p>
-					</div>
-				</div>
-				<div class="span2 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="{% static 'img/team/img-3.jpg' %}" alt="" />
-						<h3>Neil Doe</h3>
-						<p>
-							Web designer
-						</p>
-					</div>
-				</div>
-				<div class="span2 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="{% static 'img/team/img-4.jpg' %}" alt="" />
-						<h3>Mark Joe</h3>
-						<p>
-							UI designer
-						</p>
-					</div>
-				</div>
-				<div class="span2 flyIn">
-					<div class="people">
-						<img class="team-thumb img-circle" src="{% static 'img/team/img-5.jpg' %}" alt="" />
-						<h3>Stephen B</h3>
-						<p>
-							Digital imaging
-						</p>
+						<img src="{% static 'img/icons/creativity1.png' %}" alt="" />
 					</div>
 				</div>
 			</div>
@@ -167,254 +118,13 @@
 		<!-- /.container -->
 	</section>
 	<!-- end section: team -->
-	<!-- section: services -->
-	<section id="services" class="section orange">
-		<div class="container">
-			<h4>Services</h4>
-			<!-- Four columns -->
-			<div class="row">
-				<div class="span3 animated-fast flyIn">
-					<div class="service-box">
-						<img src="{% static 'img/icons/laptop.png' %}" alt="" />
-						<h2>Web design</h2>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</p>
-					</div>
-				</div>
-				<div class="span3 animated flyIn">
-					<div class="service-box">
-						<img src="{% static 'img/icons/lab.png' %}" alt="" />
-						<h2>Web development</h2>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</p>
-					</div>
-				</div>
-				<div class="span3 animated-fast flyIn">
-					<div class="service-box">
-						<img src="{% static 'img/icons/camera.png' %}" alt="" />
-						<h2>Photography</h2>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</p>
-					</div>
-				</div>
-				<div class="span3 animated-slow flyIn">
-					<div class="service-box">
-						<img src="{% static 'img/icons/basket.png' %}" alt="" />
-						<h2>Ecommerce</h2>
-						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end section: services -->
-	<!-- section: works -->
-	<section id="works" class="section">
-		<div class="container clearfix">
-			<h4>Our Works</h4>
-			<!-- portfolio filter -->
-			<div class="row">
-				<div id="filters" class="span12">
-					<ul class="clearfix">
-						<li>
-							<a href="#" data-filter="*" class="active">
-								<h5>All</h5>
-							</a>
-						</li>
-						<li>
-							<a href="#" data-filter=".web">
-								<h5>Web</h5>
-							</a>
-						</li>
-						<li>
-							<a href="#" data-filter=".print">
-								<h5>Print</h5>
-							</a>
-						</li>
-						<li>
-							<a href="#" data-filter=".design">
-								<h5>Design</h5>
-							</a>
-						</li>
-						<li>
-							<a href="#" data-filter=".photography">
-								<h5>Photography</h5>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- END PORTFOLIO FILTERING -->
-			</div>
-			<div class="row">
-				<div class="span12">
-					<div id="portfolio-wrap">
-						<!-- portfolio item -->
-						<div class="portfolio-item grid print photography">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/1.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid print design web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/2.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid print design">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/3.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/4.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/5.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/6.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/7.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/8.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid photography web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/9.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-						<!-- portfolio item -->
-						<div class="portfolio-item grid design web">
-							<div class="portfolio">
-								<a href="{% static 'img/works/big.jpg' %}" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-						<img src="{% static 'img/works/10.png' %}" alt="" />
-						<div class="portfolio-overlay">
-							<div class="thumb-info">
-								<h5>Portfolio name</h5>
-								<i class="icon-plus icon-2x"></i>
-							</div>
-						</div>
-						</a>
-							</div>
-						</div>
-						<!-- end portfolio item -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<!-- spacer section -->
 	<section class="spacer bg3">
 		<div class="container">
 			<div class="row">
 				<div class="span12 aligncenter flyLeft">
 					<blockquote class="large">
-						We are an established and trusted web agency with a reputation for commitment and high integrity
+							Build an avatar. Take flight with a new friend. Hang out with your BFFs.
 					</blockquote>
 				</div>
 				<div class="span12 aligncenter flyRight">
@@ -425,142 +135,94 @@
 	</section>
 	<!-- end spacer section -->
 	<!-- section: blog -->
-	<section id="blog" class="section">
+	<section id="creator" class="section">
 		<div class="container">
-			<h4>Our Blog</h4>
+			<h4>Creativity is the New Status Symbol.</h4>
 			<!-- Three columns -->
 			<div class="row">
-				<div class="span3">
-					<div class="home-post">
-						<div class="post-image">
-							<img class="max-img" src="{% static 'img/blog/img1.jpg' %}" alt="" />
-						</div>
-						<div class="post-meta">
-							<i class="icon-file icon-2x"></i>
-							<span class="date">June 19, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">Blog</a></span>
-						</div>
-						<div class="entry-content">
-							<h5><strong><a href="#">New design trends</a></strong></h5>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-							</p>
-							<a href="#" class="more">Read more</a>
-						</div>
+				<div class="span2 offset2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/team/img-1.jpg' %}" alt="" />
+						<h3>Droll</h3>
+						<p>
+							Creator Since 2016
+						</p>
 					</div>
 				</div>
-				<div class="span3">
-					<div class="home-post">
-						<div class="post-image">
-							<img class="max-img" src="{% static 'img/blog/img2.jpg' %}" alt="" />
-						</div>
-						<div class="post-meta">
-							<i class="icon-file icon-2x"></i>
-							<span class="date">June 19, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">News</a></span>
-						</div>
-						<div class="entry-content">
-							<h5><strong><a href="#">Retro is great</a></strong></h5>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-							</p>
-							<a href="#" class="more">Read more</a>
-						</div>
+				<div class="span2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/team/img-2.jpg' %}" alt="" />
+						<h3>MallorysOracle</h3>
+						<p>
+							Creator Since 2012
+						</p>
 					</div>
 				</div>
-				<div class="span3">
-					<div class="home-post">
-						<div class="post-image">
-							<img class="max-img" src="{% static 'img/blog/img3.jpg' %}" alt="" />
-						</div>
-						<div class="post-meta">
-							<i class="icon-file icon-2x"></i>
-							<span class="date">June 22, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">Tips</a></span>
-						</div>
-						<div class="entry-content">
-							<h5><strong><a href="#">Isometric mockup</a></strong></h5>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-							</p>
-							<a href="#" class="more">Read more</a>
-						</div>
+				<div class="span2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/team/img-3.jpg' %}" alt="" />
+						<h3>Fine</h3>
+						<p>
+							Creator Since 2010
+						</p>
 					</div>
 				</div>
-				<div class="span3">
-					<div class="home-post">
-						<div class="post-image">
-							<img class="max-img" src="{% static 'img/blog/img4.jpg' %}" alt="" />
-						</div>
-						<div class="post-meta">
-							<i class="icon-file icon-2x"></i>
-							<span class="date">June 27, 2013</span>
-							<span class="tags"><a href="#">News</a>, <a href="#">Tutorial</a></span>
-						</div>
-						<div class="entry-content">
-							<h5><strong><a href="#">Free icon set</a></strong></h5>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-							</p>
-							<a href="#" class="more">Read more</a>
-						</div>
+				<div class="span2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/team/img-4.jpg' %}" alt="" />
+						<h3>Exzy</h3>
+						<p>
+							Creator Since 2012
+						</p>
 					</div>
 				</div>
 			</div>
-			<div class="blankdivider30"></div>
-			<div class="aligncenter">
-				<a href="#" class="btn btn-large btn-theme">More blog post</a>
+		</div>
+	</section>
+
+	<!-- section: contact -->
+	<section id="contact" class="section">
+		<div class="container">
+			<h4>Contact Us</h4>
+			<!-- Three columns -->
+			<div class="row">
+				<div class="span2 offset3 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/works/8.png' %}" alt="" />
+						<h3>Press</h3>
+						<p>
+							Press inquiries should be directed to: press@imvu.com
+						</p>
+					</div>
+				</div>
+				<div class="span2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/works/dmca.jpg' %}" alt="" />
+						<h3>Copyright and DMCA Issues</h3>
+						<p>
+							You can send an email to DMCA@imvu.com for further help. 
+						</p>
+					</div>
+				</div>
+				<div class="span2 flyIn">
+					<div class="people">
+						<img class="team-thumb img-circle" src="{% static 'img/works/11.png' %}" alt="" />
+						<h3>Mailing Address</h3>
+						<p>
+							IMVU
+							PO Box 2772
+							Redwood City, CA
+							94063
+							fax: 650.321.7263
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- end spacer section -->
-	<!-- section: contact -->
-	<section id="contact" class="section green">
-		<div class="container">
-			<h4>Get in Touch</h4>
-			<p>
-				Reque facer nostro et ius, cu persius mnesarchum disputando eam, clita prompta et mel vidisse phaedrum pri et. Facilisis posidonium ex his. Mutat iudico vis in, mea aeque tamquam scripserit an, mea eu ignota viderer probatus. Lorem legere consetetur ei
-				eum. Sumo aeque assentior te eam, pri nominati posidonium consttuam
-			</p>
-			<div class="blankdivider30">
-			</div>
-			<div class="row">
-				<div class="span12">
-					<div class="cform" id="contact-form">
-						<div id="sendmessage">Your message has been sent. Thank you!</div>
-						<div id="errormessage"></div>
-						<form action="" method="post" role="form" class="contactForm">
-							<div class="row">
-								<div class="span6">
-									<div class="field your-name form-group">
-										<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-										<div class="validation"></div>
-									</div>
-									<div class="field your-email form-group">
-										<input type="text" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-										<div class="validation"></div>
-									</div>
-									<div class="field subject form-group">
-										<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-										<div class="validation"></div>
-									</div>
-								</div>
-								<div class="span6">
-									<div class="field message form-group">
-										<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-										<div class="validation"></div>
-									</div>
-									<input type="submit" value="Send message" class="btn btn-theme pull-left">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<!-- ./span12 -->
-			</div>
-		</div>
-	</section>
+
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -568,11 +230,11 @@
 					<ul class="social-networks">
 						<li><a href="https://www.instagram.com/imvu/?hl=en"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="https://twitter.com/IMVU"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
-						<li><a href="https://www.facebook.com/IMVU/"><i class="icon-circled icon-bgdark icon-dribbble icon-2x"></i></a></li>
+						<li><a href="https://www.facebook.com/IMVU/"><i class="icon-circled icon-bgdark icon-facebook icon-2x"></i></a></li>
 						<li><a href="https://www.pinterest.com/imvuinc/"><i class="icon-circled icon-bgdark icon-pinterest icon-2x"></i></a></li>
 					</ul>
 					<p class="copyright">
-						&copy; Maxim Theme. All rights reserved.
+						&copy; Copyright 2019 IMVU All Rights Reserved
 						<div class="credits">
 							<!--
                 All the links in the footer should remain intact.
@@ -580,7 +242,6 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Maxim
               -->
-							Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 						</div>
 					</p>
 				</div>
@@ -600,7 +261,7 @@
 	<script src="{% static 'js/inview.js' %}"></script>
 	<script src="{% static 'js/animate.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
-	<script src="{% static 'contactform/contactform.js' %}"></script>
+
 
 </body>
 

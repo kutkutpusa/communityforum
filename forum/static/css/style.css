@@ -179,8 +179,6 @@ ul, ol {
 	line-height: 1.5; /* 24px */
 	margin: 0 0 1.5em 0;
 }
-body, input, textarea {
-}
 
 a {
   color: #454545;
@@ -274,10 +272,6 @@ h2.pagetitle {
 04. Navigation
 ============================================================ */
 
-.navbar-fixed-top .container {
-/* Uncomment to make nav expand full width */
- /*	width: auto; */
-}
 .navbar .brand {
 	margin-left:0;
 	padding: 0;
@@ -371,7 +365,7 @@ header .logo {
 
 /* --- Header slider --- */
 #header-wrapper.header-slider {
-	background: #444 url(../img/bg/bg-1.jpg) no-repeat center center fixed;
+	background: #444 url(https://static-akm.imvu.com/imvufiles/ads/20190401_AprilClientSkin_1600x1200.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -761,8 +755,8 @@ section#services.section.orange .service-box:hover {
 
 /* === section blog === */
 
-section#blog {
-	background: #f2f2f2;
+section#creator {
+	background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
 }
 
 .home-post {
@@ -869,19 +863,6 @@ section#about {
 	padding:0 0 0 34px;
 	font-size:20px;
 	line-height:1.5em;
-}
-
-#tweet ul li:before {
-	font-family: 'FontAwesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	content: "\f099";
-	margin-right:20px;
 }
 
 /* === Contact section === */
@@ -1690,19 +1671,10 @@ i.icon-white {
  display: block;
  text-align:center
 }
- .job-position: {
- margin-bottom: 1.5em;
-}
+ 
  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
  margin-left: auto;
  margin-right: auto;
 }
 		
-/* Contact Form */
-	#contact-form {
-		overflow: hidden;
-	}
-	#contact-form input[type=submit] {
-		width: 100%;
-	}
 }
