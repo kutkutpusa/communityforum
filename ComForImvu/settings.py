@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'forum.apps.ForumConfig',
     'users.apps.UsersConfig',
+    'analytics.apps.AnalyticsConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
