@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'forum/icons8-imvu.svg' %}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -37,12 +38,12 @@
             </div>
         </nav>
     </header>
-    <main role="main" class="container" style="height: 10px; width: 500px; margin-left: 25rem;">
+    <main role="main" class="container" style="height: 10px; width: 500px; align-self: center;">
         <div class="content-section ">
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class="mb-3">Be Part Of Our Community!</legend>
+                    <legend class="mb-3"><img src="https://img.icons8.com/color/96/000000/imvu.png">   Be Part Of Our Community!</legend>
                     <div class="border-top pt-2">
                         {{ form|crispy }}
                     </div>
