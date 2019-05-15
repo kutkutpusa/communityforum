@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('analytics/', views.analytics, name='analytics-home'),
+    path('overview/', views.analytics, name='analytics-overview'),
 ]
 
