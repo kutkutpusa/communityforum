@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='status',
-            field=models.IntegerField(choices=[(1, 'General'), (2, 'Article'), (3, 'Guidelines')], default='general', max_length=10),
+            field=models.IntegerField(choices=[(1, 'General'), (2, 'Article'), (3, 'Guidelines')], default=1, max_length=10),
         ),
     ]
