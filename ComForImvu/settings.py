@@ -22,8 +22,7 @@ EMAIL_PORT = 587
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#MAIN_DIR = os.path.dirname(os.path.dirname(__file__)) #for heroku
-MAIN_DIR = os.path.normpath(os.path.dirname(__file__))
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__)) #for heroku
 
 
 # Quick-start development settings - unsuitable for production
@@ -65,13 +64,19 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
 ROOT_URLCONF = 'ComForImvu.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(MAIN_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
