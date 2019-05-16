@@ -199,5 +199,6 @@ def about(request):
 
 
 def index(request):
-    return render(request, 'forum/main.html')
+    if request.method == 'POST':
+        return render(request, 'forum/main.html')
     
