@@ -69,9 +69,7 @@ ROOT_URLCONF = 'ComForImvu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(MAIN_DIR, '/forum/templates')
-            ],
+        'DIRS': ['forum'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
