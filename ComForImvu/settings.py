@@ -14,8 +14,8 @@ import os
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'test.imvu002@gmail.com'
-EMAIL_HOST_PASSWORD = 'asd0927409962'
+EMAIL_HOST_USER = 'communityforumsuperuser@gmail.com'
+EMAIL_HOST_PASSWORD = 'sadsummer1920'
 EMAIL_PORT = 587
 
 

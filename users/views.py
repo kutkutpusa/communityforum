@@ -13,8 +13,10 @@ from django.template.loader import render_to_string
 from .token import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+from django.views.decorators.csrf import csrf_protect
 
 
+@csrf_protect
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -27,7 +29,7 @@ def register(request):
             message = render_to_string('users/acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
