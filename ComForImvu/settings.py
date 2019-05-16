@@ -22,15 +22,15 @@ EMAIL_PORT = 587
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-SETTINGS_PATH = os.path.dirname(__file__)
-PROJECT_PATH = os.path.join(SETTINGS_PATH, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-TEMPLATES_PATH = os.path.join(PROJECT_PATH, "templates")
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# SETTINGS_PATH = os.path.dirname(__file__)
+# PROJECT_PATH = os.path.join(SETTINGS_PATH, os.pardir)
+# PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+# TEMPLATES_PATH = os.path.join(PROJECT_PATH, "templates")
 
-TEMPLATE_DIRS = (
-    TEMPLATES_PATH,
-)
+# TEMPLATE_DIRS = (
+#     TEMPLATES_PATH,
+# )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -40,7 +40,7 @@ TEMPLATE_DIRS = (
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['imvucommunityforum.herokuapp.com']
 
@@ -68,14 +68,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
+# TEMPLATE_LOADERS = (
+#     'django.template.loaders.filesystem.Loader',
+#     'django.template.loaders.app_directories.Loader',
+# #     'django.template.loaders.eggs.Loader',
+# )
 
 ROOT_URLCONF = 'ComForImvu.urls'
 
@@ -145,7 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 
@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 #    os.path.join(BASE_DIR, 'static'),
 #)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

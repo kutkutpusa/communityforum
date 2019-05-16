@@ -8,12 +8,14 @@ from django.forms import TextInput, Textarea
 
 
 class Post(models.Model):
+    general = 1
+    article = 2
+    guidelines = 3
     STATUS_CHOICES = (
         (1, 'General'),
         (2, 'Article'),
         (3, 'Guidelines')
     )
-
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
