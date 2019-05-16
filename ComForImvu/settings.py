@@ -22,9 +22,10 @@ EMAIL_PORT = 587
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.path.dirname(__file__) #for heroku
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, '/app/forum/templates'),
+    os.path.join(PROJECT_DIR, '/forum/templates/forum/main.html'),
 )
 
 # Quick-start development settings - unsuitable for production
