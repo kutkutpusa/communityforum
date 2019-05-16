@@ -42,7 +42,6 @@ ALLOWED_HOSTS = ['imvucommunityforum.herokuapp.com']
 INSTALLED_APPS = [
     'forum.apps.ForumConfig',
     'users.apps.UsersConfig',
-    'analytics.apps.AnalyticsConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
