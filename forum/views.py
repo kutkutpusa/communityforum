@@ -15,6 +15,7 @@ from django.shortcuts import redirect
 
 @login_required
 def home(request):
+    template_name='forum/home.html'
     p = Post.objects.all().order_by('-date_posted')
     query = request.GET.get('q')
     if query:
