@@ -70,7 +70,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(MAIN_DIR, 'templates')
+            os.path.join(MAIN_DIR, '/forum/templates')
             ],
         'APP_DIRS': True,
         'OPTIONS': {
