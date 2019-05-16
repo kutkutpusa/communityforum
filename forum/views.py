@@ -199,4 +199,6 @@ def about(request):
 
 
 def index(request):
+    template_name = 'forum/main.html'
     return render(request, 'forum/main.html')
+    
