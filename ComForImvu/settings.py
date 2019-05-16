@@ -22,7 +22,7 @@ EMAIL_PORT = 587
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#MAIN_DIR = os.path.dirname(os.path.dirname(__file__))) #for heroku
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__)) #for heroku
 
 
 # Quick-start development settings - unsuitable for production
@@ -70,7 +70,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, '/forum/templates')
+            os.path.join(MAIN_DIR, 'templates')
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'templates'),
+    os.path.join(MAIN_DIR,'templates'),
 )
 
 STATICFILES_DIRS = (
