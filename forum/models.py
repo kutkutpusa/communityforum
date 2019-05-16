@@ -8,20 +8,17 @@ from django.forms import TextInput, Textarea
 
 
 class Post(models.Model):
-    general = 1
-    article = 2
-    guidelines = 3
     STATUS_CHOICES = (
-        (general, 'General'),
-        (article, 'Article'),
-        (guidelines, 'Guidelines')
+        (1, 'General'),
+        (2, 'Article'),
+        (3, 'Guidelines')
     )
 
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    status = models.IntegerField(choices=STATUS_CHOICES, default=general)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=1)
     like = models.ManyToManyField(User, related_name='likes', blank=True)
 
     def __str__(self):
