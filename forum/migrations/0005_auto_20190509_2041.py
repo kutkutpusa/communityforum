@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='status',
-            field=models.CharField(choices=[('general', 'General'), ('article', 'Article'), ('guidelines', 'Guidelines')], default='general', max_length=10),
+            field=models.CharField(choices=[('general', 'General'), ('article', 'Article'), ('guidelines', 'Guidelines')], default=1, max_length=10),
         ),
     ]
