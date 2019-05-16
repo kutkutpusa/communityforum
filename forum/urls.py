@@ -3,7 +3,7 @@ from .views import PostDetailView, PostCreateView, PostUpdateView, PostDeleteVie
 from . import views
 
 urlpatterns = [
-    path('home/', views.home, name='forum-home'),
+    path('home/', views.home.as_view(template_name='forum/home.html'), name='forum-home'),
     path('home/articles/', views.article, name='forum-article'),
     path('home/guidelines/', views.guidelines, name='forum-guideline'),
     path('home/discussions/', views.discussions, name='forum-discussion'),
