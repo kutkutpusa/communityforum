@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['imvucommunityforum.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
