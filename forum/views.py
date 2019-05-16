@@ -199,4 +199,4 @@ def about(request):
 
 
 def index(request):
-    return render(request, 'forum/index.html')
+    return render(request, 'forum/main.html')
