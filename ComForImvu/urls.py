@@ -32,20 +32,8 @@ urlpatterns = [
     path('change_password/', user_views.password, name='password'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
- #   path('', include('forum.urls')),
+    path('', include('forum.urls')),
     path('like/$', views.like_post, name='like_post'),
-    path('home/', views.home, name='forum-home'),
-    path('home/articles/', views.article, name='forum-article'),
-    path('home/guidelines/', views.guidelines, name='forum-guideline'),
-    path('home/discussions/', views.discussions, name='forum-discussion'),
-    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
-    path('post/<int:pk>', PostDetailView.as_view(), name='post-detail'),
-    path('post/new/', PostCreateView.as_view(), name='post-create'),
-    path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
-    path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
-    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
-    path('about/', views.about, name='forum-about'),
-    path('', views.index, name='forum-index'),
 ]
 
 if settings.DEBUG:

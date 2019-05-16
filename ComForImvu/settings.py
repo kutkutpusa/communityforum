@@ -141,9 +141,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-#TEMPLATE_DIRS = (
-#    os.path.join(MAIN_DIR,'templates'),
-#)
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'forum/templates'),
+)
 
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
